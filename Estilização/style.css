@@ -1,0 +1,298 @@
+/* Variáveis para cores e fontes. */
+:root {
+    --primary-color: #210730; /* Azul marinho para textos e elementos principais */
+    --secondary-color: #4f15b9; /* Azul claro para destaques e botões */
+    --light-bg-color: #ecf0f1; /* Cinza claro para o fundo */
+    --dark-bg-color: #f4f7f6; /* Cinza um pouco mais escuro para o fundo da página */
+    --text-color: #2c3e50; /* Cor padrão do texto */
+    --white-color: #ffffff; /* Cor branca para fundos claros */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Sombra suave */
+    --border-color: #bdc3c7; /* Cor da borda */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
+
+
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+/* Estilos globais */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos do cabeçalho e navegação */
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Navegação */
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Estilos do menu de navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Itens do menu */
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+/* Links do menu */
+nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+/* Efeito de sublinhado animado nos links do menu */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+/* Expande o sublinhado ao passar o mouse */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Estilos das seções */
+section {
+    padding: 80px 40px;
+    margin: 40px 0;
+    background-color: var(--white-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+/* Títulos das seções */
+section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Linha decorativa abaixo dos títulos das seções */
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+/* Estilos do rodapé */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 0.9rem;
+}
+
+/* Estilos específicos para cada seção */
+.education-item, .idiomas-item {
+    margin-bottom: 25px;
+}
+
+/* Estilos para títulos e textos dentro das seções */
+.education-item h3, .idiomas-item h3 {
+    text-align: left;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Estilos para parágrafos e listas dentro das seções */
+.education-item p, .idiomas-item ul {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* Estilos para listas dentro da seção de idiomas */
+.idiomas-item ul {
+    list-style: disc inside;
+    padding-left: 10px;
+}
+
+/* Estilos para a seção de projetos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Estilos para os cartões de projeto */
+.project-card {
+    background-color: var(--light-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efeito de elevação ao passar o mouse sobre o cartão */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+/* Estilos para títulos e descrições dentro dos cartões de projeto */
+.project-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Descrição do projeto */
+.project-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    flex-grow: 1; 
+}
+
+/* Estilos para os links dos projetos */
+.project-links {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+/* Estilos para os botões de link dos projetos */
+.project-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Efeito de hover nos botões de link dos projetos */
+.project-link:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Estilos para o formulário de contato */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 40px auto 0;
+    gap: 20px;
+}
+
+/* Estilos para os grupos de formulário */
+.form-group {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilos para os rótulos do formulário */
+.contact-form label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Estilos para os campos de entrada e textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--light-bg-color);
+    transition: border-color 0.3s ease;
+}
+
+/* Estilos para os campos de entrada e textarea ao focar */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+/* Permitir redimensionamento vertical do textarea */
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Estilos para o botão de envio */
+.submit-btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+/* Efeito de hover no botão de envio */
+.submit-btn:hover {
+    background-color: #2980b9;
+}
